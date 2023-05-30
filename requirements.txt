@@ -1,0 +1,10 @@
+Flask
+tensorflow==2.10.0
+Pillow
+scikit-learn
+pandas
+pandas
+numpy
+matplotlib
+gunicorn
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DogCatDetection</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  
+ <!-- Tab links -->
+<div class="tab">
+    <button class="tablinks" style="font-weight: bold;">Dogs & Cats Detection</button>
+    <button class="tablinks" onclick="openCity(event, 'detect')">Detect</button>
+    <button class="tablinks" onclick="openCity(event, 'history')">History</button>
+    <button class="tablinks" onclick="openCity(event, 'preformance')">Performance</button>
+  </div>
+  
+  <!-- Tab content -->
+  <div id="detect" class="tabcontent">
+    <h3>Detect</h3>
+    <p>Here you can use the model to detect if an image is one of a dog or a cat.</p>
+
+    <!-- <form action="upload.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="imageFile" id="imageFile">
+        <input type="submit" value="Upload">
+    </form> -->
+    <br>
+    <br>
+    <br>
+<form action="{{ url_for('api/predict')}}" method="post" enctype="multipart/form-data">
+  <div class="file-upload">
+    <!-- <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button> -->
+  
+    <div class="image-upload-wrap">
+      <input class="file-upload-input" type='file' name="image" onchange="readURL(this);" accept="image/*" />
+      <div class="drag-text">
+        <h3>Drag and drop a file or select add Image</h3>
+      </div>
+    </div>
+    <div class="file-upload-content">
+      <img class="file-upload-image" src="#" alt="your image" />
+      <div class="image-title-wrap">
+        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form>
+
+
+    <div class="loader"></div>
+    {% if prediction %}
+    <h2>Cette image est celle d'un : {{ prediction }}</h2>
+    {% prediction %}
+</div>
+  
+  <div id="history" class="tabcontent">
+    <h3>History</h3>
+    <p>See the history of the dections already done.</p>
+  </div>
+  
+  <div id="preformance" class="tabcontent">
+    <h3>Performance</h3>
+    <p>See the evolution of the model for the differents detections.</p>
+  </div>
+
+
+
+
+  <script src="main.js"></script>
+  <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</body>
+</html>
