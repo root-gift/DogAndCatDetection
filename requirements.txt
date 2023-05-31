@@ -2,9 +2,6 @@ Flask
 tensorflow
 Pillow
 scikit-learn
-pandas
-pandas
 numpy
-matplotlib
 gunicorn
 
