@@ -1,4 +1,5 @@
 Flask
-tensorflow-lite==2.5.0
+python-slim
+tensorflow-lite
 numpy
 gunicorn
