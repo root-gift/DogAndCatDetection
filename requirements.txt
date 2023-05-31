@@ -1,6 +1,6 @@
 Flask
 tensorflow
-Pillow
+# Pillow
 scikit-learn
 numpy
 gunicorn
