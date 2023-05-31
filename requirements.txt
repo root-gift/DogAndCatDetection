@@ -1,5 +1,4 @@
 Flask
-python:3.8-slim
 tensorflow-lite
 numpy
 gunicorn
