@@ -22,18 +22,19 @@
     <h3>Detect</h3>
     <p>Here you can use the model to detect if an image is one of a dog or a cat.</p>
 
-    <!-- <form action="upload.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="imageFile" id="imageFile">
+    <form action="{{ url_for('api/predict')}}" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" id="imageFile">
         <input type="submit" value="Upload">
-    </form> -->
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
     <br>
     <br>
     <br>
-<form action="{{ url_for('api/predict')}}" method="post" enctype="multipart/form-data">
+<!-- <form action="{{ url_for('api/predict')}}" method="post" enctype="multipart/form-data">
   <div class="file-upload">
-    <!-- <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button> -->
+    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button> -->
   
-    <div class="image-upload-wrap">
+    <!-- <div class="image-upload-wrap">
       <input class="file-upload-input" type='file' name="image" onchange="readURL(this);" accept="image/*" />
       <div class="drag-text">
         <h3>Drag and drop a file or select add Image</h3>
@@ -46,8 +47,8 @@
       </div>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-</form>
+  <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button> -->
+<!-- </form> --> 
 
 
     <div class="loader"></div>
