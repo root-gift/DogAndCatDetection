@@ -1,4 +1,5 @@
 Flask
-tensorflow-cpu
+tensorflow
+scikit-learn
 numpy
 gunicorn
