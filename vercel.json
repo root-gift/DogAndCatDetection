@@ -1,0 +1,29 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "./app.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      { "src": "/(.*)", 
+      "dest": "app.py" 
+      }
+    ],
+    "env": {
+      "PYTHONUNBUFFERED": "1"
+    },
+    "functions": {
+      "api": {
+        "runtime": "python3.8",
+        "memory": 1024,
+        "includeFiles": [
+          "requirements.txt"
+        ],
+        "buildCommand": "pip install -r requirements.txt"
+      }
+    }
+  }
+  
+  
