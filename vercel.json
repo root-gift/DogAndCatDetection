@@ -4,23 +4,23 @@
       {
         "src": "app.py",
         "use": "@vercel/python",
-        "api": {
-            "runtime": "python3.8",
-            "includeFiles": [
-              "requirements.txt"
-            ],
-            "buildCommand": "pip install -r requirements.txt"
-          }
+        "config": {
+          "runtime": "python3.8",
+          "includeFiles": [
+            "requirements.txt"
+          ],
+          "buildCommand": "pip install -r requirements.txt"
+        }
       }
     ],
     "routes": [
-      { "src": "/(.*)", 
-      "dest": "app.py" 
+      {
+        "src": "/(.*)",
+        "dest": "app.py"
       }
     ],
     "env": {
       "PYTHONUNBUFFERED": "1"
     }
   }
-  
   
